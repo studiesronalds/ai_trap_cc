@@ -175,3 +175,19 @@ aisim/
 - `MANUAL.md` — complete reference for every command, flag, and formula
 - Type `??` in the REPL for in-terminal parameter explanations
 - Type `help` in the REPL for the full command list
+
+---
+
+## Based on original work
+
+This simulator implements the model from:
+
+> **"The AI Layoff Trap"**
+> Brett Hemenway Falk & Gerry Tsoukalas
+> arXiv:2603.20617v1 [econ.TH], 21 March 2026
+> Hemenway Falk: University of Pennsylvania (fbrett@cis.upenn.edu)
+> Tsoukalas: Boston University (gerryt@bu.edu)
+
+All economic theory, mathematical derivations, propositions, and policy analysis reproduced or referenced in this tool originate from that paper. This simulator is an independent implementation for research and educational purposes; it is not affiliated with or endorsed by the authors.
+
+If you use this tool in work that draws on the underlying model, please cite the original paper.
