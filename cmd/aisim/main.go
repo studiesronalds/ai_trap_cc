@@ -41,6 +41,9 @@ func main() {
 	// Output format
 	fOut := flag.String("output", "text", "output format: text|json|csv")
 
+	// Explain flag
+	fExplain := flag.String("explain", "", "deep-explain a param (or 'all'): N|w|c|k|lambda|eta|A|L|mu|phi|etahat|all")
+
 	flag.Parse()
 
 	// Build params from flags or preset
@@ -70,6 +73,17 @@ func main() {
 	if err := p.Validate(); err != nil {
 		fmt.Fprintf(os.Stderr, "invalid parameters: %v\n", err)
 		os.Exit(1)
+	}
+
+	// Explain mode
+	if *fExplain != "" {
+		r := repl.New(p)
+		if strings.ToLower(*fExplain) == "all" {
+			r.Explain(nil)
+		} else {
+			r.Explain([]string{*fExplain})
+		}
+		return
 	}
 
 	// REPL mode: no args or --repl
